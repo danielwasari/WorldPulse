@@ -1,40 +1,99 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 
+<meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>WorldPulse</title>
+
+<title>
+WorldPulse - Live World Population, Weather & Global Data
+</title>
+
+
+<meta name="description" content="WorldPulse is an interactive global dashboard showing world population, country information, live weather, climate data and world statistics on an interactive map.">
+
+
+<meta name="keywords" content="WorldPulse, world population, live weather, climate dashboard, country data, global statistics, world map">
+
+
+<meta name="author" content="WorldPulse">
+
+
+<meta name="robots" content="index, follow">
+
+
+
+<!-- Social Sharing -->
+
+<meta property="og:title" content="WorldPulse - Live Global Data Dashboard">
+
+<meta property="og:description" content="Explore live population, weather, climate and country information with an interactive world map.">
+
+<meta property="og:type" content="website">
+
+
+<meta property="og:url" content="YOUR_GITHUB_PAGES_LINK">
+
+
+<meta property="og:image" content="YOUR_IMAGE_LINK">
+
+
+
+
+
+<link rel="icon" href="favicon.png">
+
 
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
 
+
 <link rel="stylesheet" href="style.css">
 
+
 </head>
+
 
 
 <body>
 
 
+
+
 <!-- LOADING SCREEN -->
+
 
 <div id="loader">
 
+
 <div class="globe">
+
 🌍
+
 </div>
+
+
 
 <h2>
+
 Loading WorldPulse...
+
 </h2>
 
+
 <p>
+
 Connecting global data
+
 </p>
 
+
 </div>
+
 
 
 
@@ -42,18 +101,26 @@ Connecting global data
 
 <!-- NAVIGATION -->
 
+
 <header class="navbar">
 
 
+
 <div class="logo">
+
 🌍 WorldPulse
+
 </div>
 
 
 
+
 <button class="menu-btn" onclick="toggleMenu()">
+
 ☰
+
 </button>
+
 
 
 
@@ -62,27 +129,37 @@ Connecting global data
 
 
 <a href="#map">
+
 🗺️ Map
+
 </a>
 
 
 <a href="#climate">
+
 🌦️ Climate
+
 </a>
 
 
 <a href="#country">
+
 🌍 Countries
+
 </a>
 
 
 <a href="#stats">
+
 📊 Stats
+
 </a>
 
 
 <a href="#ranking">
+
 🏆 Rankings
+
 </a>
 
 
@@ -98,15 +175,15 @@ Connecting global data
 
 
 
-
 <section class="hero">
 
 
+
 <h1>
+
 🌍 WorldPulse
+
 </h1>
-
-
 
 
 
@@ -114,63 +191,89 @@ Connecting global data
 
 
 <h2>
+
 🔴 Live Global Status
+
 </h2>
 
 
 
 
 <p>
+
 🕒 Time:
+
 <span id="clock">
+
 00:00:00
+
 </span>
+
 </p>
 
 
 
 
 <p>
+
 🌎 Population:
+
 <span id="population">
+
 Loading...
+
 </span>
+
 </p>
 
 
 
 
 <p>
+
 👶 Births:
+
 <span id="births">
+
 Loading...
+
 </span>
+
 </p>
 
 
 
 
 <p>
+
 ⚰️ Deaths:
+
 <span id="deaths">
+
 Loading...
+
 </span>
+
 </p>
 
 
 
 
 <p>
+
 🌳 Trees:
+
 <span id="trees">
+
 Loading...
+
 </span>
+
 </p>
 
 
 
 </div>
-
 
 
 </section>
@@ -184,18 +287,23 @@ Loading...
 <div class="search">
 
 
-<input 
+<input
+
 id="countrySearch"
-placeholder="Search country">
+
+placeholder="Search country"
+
+>
 
 
 <button onclick="searchCountry()">
+
 Search
+
 </button>
 
 
 </div>
-
 
 
 
@@ -210,12 +318,13 @@ Search
 
 
 
-
 <div class="charts" id="climate">
 
 
 <h2>
+
 🌦️ Global Climate Dashboard
+
 </h2>
 
 
@@ -232,13 +341,13 @@ Average Temperature
 </p>
 
 <span id="globalTemp">
+
 Loading...
+
 </span>
 
 
 </div>
-
-
 
 
 
@@ -251,13 +360,13 @@ Humidity
 </p>
 
 <span id="humidity">
+
 Loading...
+
 </span>
 
 
 </div>
-
-
 
 
 
@@ -270,13 +379,13 @@ Rain Activity
 </p>
 
 <span id="rain">
+
 Loading...
+
 </span>
 
 
 </div>
-
-
 
 
 
@@ -289,7 +398,9 @@ Wind Speed
 </p>
 
 <span id="globalWind">
+
 Loading...
+
 </span>
 
 
@@ -301,7 +412,6 @@ Loading...
 
 
 </div>
-
 <div class="country-panel" id="country">
 
 
@@ -309,86 +419,138 @@ Loading...
 
 
 <h2>
+
 🌍 Country Information
+
 </h2>
 
 
 
+
 <h3 id="countryName">
+
 Waiting for selection...
+
 </h3>
+
 
 
 
 <p>
 👥 Population:
+
 <span id="countryPopulation">-</span>
+
 </p>
+
+
 
 
 <p>
 🏙️ Capital:
+
 <span id="capital">-</span>
+
 </p>
+
+
 
 
 <p>
 🌍 Region:
+
 <span id="region">-</span>
+
 </p>
+
+
 
 
 <p>
 💰 Currency:
+
 <span id="currency">-</span>
+
 </p>
+
+
 
 
 <p>
 📐 Area:
+
 <span id="area">-</span>
+
 </p>
+
+
 
 
 <p>
 🗣️ Language:
+
 <span id="language">-</span>
+
 </p>
+
+
 
 
 <p>
 🕒 Time Zone:
+
 <span id="timezone">-</span>
+
 </p>
+
+
 
 
 <p>
 🔤 Code:
+
 <span id="code">-</span>
+
 </p>
+
+
 
 
 <p>
 🌡️ Temperature:
+
 <span id="temperature">-</span>
+
 </p>
+
+
 
 
 <p>
 ☁️ Weather:
+
 <span id="weather">-</span>
+
 </p>
+
+
 
 
 <p>
 💨 Wind:
+
 <span id="wind">-</span>
+
 </p>
+
+
 
 
 <p>
 🕒 Local Time:
+
 <span id="localTime">-</span>
+
 </p>
 
 
@@ -397,6 +559,7 @@ Waiting for selection...
 
 
 </div>
+
 
 
 
@@ -408,8 +571,11 @@ Waiting for selection...
 
 
 <h2>
+
 📈 World Statistics
+
 </h2>
+
 
 
 <canvas id="worldChart"></canvas>
@@ -423,13 +589,15 @@ Waiting for selection...
 
 
 
-
 <div class="charts" id="ranking">
 
 
 <h2>
+
 🏆 World Rankings
+
 </h2>
+
 
 
 
@@ -444,8 +612,11 @@ Loading continent data...
 
 
 <h2>
+
 🌍 Top 10 Population Countries
+
 </h2>
+
 
 
 
@@ -456,8 +627,43 @@ Loading rankings...
 </div>
 
 
+
 </div>
 
+
+
+
+
+
+
+<!-- SEO FOOTER -->
+
+
+<footer>
+
+
+<h3>
+
+🌍 WorldPulse
+
+</h3>
+
+
+<p>
+
+Live global information dashboard for population, weather, climate and country statistics.
+
+</p>
+
+
+<p>
+
+© 2026 WorldPulse
+
+</p>
+
+
+</footer>
 
 
 
@@ -475,10 +681,14 @@ Loading rankings...
 
 
 
+
+
+
 <!-- PROJECT FILES -->
 
 
 <script src="Countries.js"></script>
+
 
 <script src="script.js"></script>
 
@@ -487,18 +697,25 @@ Loading rankings...
 
 
 
-<!-- MENU -->
+
+<!-- MOBILE MENU -->
 
 
 <script>
 
+
 function toggleMenu(){
 
+
 document
+
 .getElementById("navMenu")
+
 .classList.toggle("show");
 
+
 }
+
 
 </script>
 
@@ -507,15 +724,24 @@ document
 
 
 
+
+
 <!-- LOADER -->
 
+
 <script>
+
 
 window.addEventListener("load",()=>{
 
 
 let loader =
+
 document.getElementById("loader");
+
+
+
+if(loader){
 
 
 loader.classList.add("loader-hide");
@@ -524,9 +750,14 @@ loader.classList.add("loader-hide");
 
 setTimeout(()=>{
 
+
 loader.remove();
 
+
 },1500);
+
+
+}
 
 
 
@@ -538,3 +769,9 @@ loader.remove();
 
 
 
+
+
+</body>
+
+
+</html>
