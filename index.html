@@ -771,7 +771,55 @@ loader.remove();
 
 
 
+</script>
 
+
+
+<!-- PWA SERVICE WORKER -->
+
+<script>
+
+if ("serviceWorker" in navigator) {
+
+
+window.addEventListener("load",()=>{
+
+
+navigator.serviceWorker.register("service-worker.js")
+
+
+.then(()=>{
+
+
+console.log("WorldPulse PWA enabled");
+
+
+})
+
+
+.catch(error=>{
+
+
+console.log("PWA registration failed:", error);
+
+
+});
+
+
+});
+
+
+}
+
+</script>
+
+
+
+
+
+</body>
+
+</html>
 
 </body>
 
